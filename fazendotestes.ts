@@ -1,8 +1,12 @@
-function testarAlgo(val:number) 
-{
-	return val + testarOutro(10); 
+function testarAlgo (val: number): number {
+  return val + testarOutro(10)
 }
 
-function testarOutro(val:number){
-	return val +100;
+function testarOutro (val: number): number {
+  return val + 100
+}
+
+testarAlgo(19)
+function testar (){
+
 }
