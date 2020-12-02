@@ -1,3 +1,4 @@
+import {MissingParamError} from '../erros/missing-param-errors';
 import { UserController } from './User'
 
 
@@ -13,7 +14,7 @@ describe('User Controller', () => {
     }
     const httpResponse = systemUnderTest.handle(httpRequest)
     expect(httpResponse.statusCode).toBe(400)
-    expect(httpResponse.body).toEqual(new Error('Missing param: name'))
+    expect(httpResponse.body).toEqual(new MissingParamError('name'))
   })
 
   test('Should return 400 if no Email is provided', async () => {
@@ -27,7 +28,7 @@ describe('User Controller', () => {
     }
     const httpResponse = systemUnderTest.handle(httpRequest)
     expect(httpResponse.statusCode).toBe(400)
-    expect(httpResponse.body).toEqual(new Error('Missing param: email'))
+    expect(httpResponse.body).toEqual(new MissingParamError('email'))
   })
 
   test('Should return 400 if no password lis provided', async () => {
@@ -41,7 +42,7 @@ describe('User Controller', () => {
     }
     const httpResponse = systemUnderTest.handle(httpRequest)
     expect(httpResponse.statusCode).toBe(400)
-    expect(httpResponse.body).toEqual(new Error('Missing param: password'))
+    expect(httpResponse.body).toEqual(new MissingParamError('password'))
   })
 
 
